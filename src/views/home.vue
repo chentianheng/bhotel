@@ -94,7 +94,53 @@
         <h2>适用于微信生态+酒店管理的一体式解决方案</h2>
         <img src="../assets/methods.png" alt="methods">
     </div>
-    <footer class="footerContainer"></footer>
+    <footer class="footerContainer">
+        <div class="contentContainer">
+            <div class="footer">
+
+                <!--合作伙伴-->
+                <div class="footerList">
+                    <h1>合作伙伴</h1>
+                    <ul>
+                        <li><a href="http://www.dldhotels.com/home"><img src="../assets/icon/dldhotel.png" alt="多伦多连锁酒店"></a></li>
+                    </ul>
+                </div>
+
+                <!--产品定制-->
+                <div class="footerList">
+                    <h1>产品定制</h1>
+                    <ul>
+                        <li><a href="#">小程序</a></li>
+                        <li><a href="#">公众号</a></li>
+                        <li><a href="#">公司官网</a></li>
+                        <li><a href="#">H5页面</a></li>
+                        <li><a href="#">数据处理</a></li>
+                    </ul>
+                </div>
+
+                <!--公司简介-->
+                <div class="footerList">
+                    <h1>公司</h1>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">工作机会</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                    </ul>
+                </div>
+
+                <!--其他-->
+                <div class="footerList">
+                    <h1>其他</h1>
+                    <ul>
+                        <li>chentianhengg@gmail.com</li>
+                        <li><span>+86 156 2648 3203</span></li>
+                        <li>周一至周日 9:00 ~ 22:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p>Copyright © 2019 hotel.bintre.com. All Rights Reserved 深圳市二叉树科技有限公司版权所有 粤ICP备17019238号</p>
+    </footer>
 </div>
 </template>
 
@@ -150,7 +196,6 @@
             background-color: #FFFFFF;
             border-radius: 50px;
             margin-top: 30px;
-
         }
 
         .headerContainer {
@@ -170,9 +215,8 @@
             /*background-color: red;*/
             padding: 0 30px;
             justify-content: space-between;
-
-
         }
+
         .headerContainer i img{
             width: 40px;
         }
@@ -188,16 +232,13 @@
             text-decoration: none;
             list-style: none;
             float: left;
-            color: #FFFFFF
-
-        }
-
-        li + li{
+            color: #FFFFFF;
             margin-left: 10px;
+
         }
 
-        .header ul li a:hover{
-            border-bottom: 2px solid #FFFFFF  ;
+        .header ul li a:hover {
+            border-bottom: 2px solid #FFFFFF;
         }
 
         /*后端需求样式*/
@@ -240,7 +281,7 @@
         .dashboard .item h2{
             color: #707070;
             font-size: 0.8rem;
-            margin: 0 0 40px ;
+            margin: 0 0 80px ;
             font-weight: 300;
         }
 
@@ -276,6 +317,7 @@
             min-width: 1270px;
             height: 450px;
         }
+
 
         .impression {
             display: flex;
@@ -393,13 +435,61 @@
         }
 
         .marketingContainer img{
-            margin: 40px 40px 80px;
+            margin: 40px 40px 160px;
             width: 40%;
         }
 
         /*footer样式*/
         .footerContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: #454545;
-            height: 500px;
+            height: auto;
         }
+
+        .contentContainer{
+            display: flex;
+            border-bottom: 1px solid #707070;
+            width: 1270px;
+            padding-bottom: 40px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .footerContainer h1{
+            color: #FFFFFF;
+            font-size: 16px;
+            margin: 60px 0 20px;
+        }
+
+        .footerContainer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .footerContainer li{
+            color: #707070;
+            padding-bottom: 10px;
+        }
+
+        .footerContainer span{
+            color: #E5C182;
+        }
+
+        .footerContainer a{
+            text-decoration: none;
+            color: #707070;
+        }
+
+        .footerContainer p{
+            margin: 60px 0 80px;
+            color: #B1B1B1;
+            font-size: 14px;
+        }
+
 </style>
