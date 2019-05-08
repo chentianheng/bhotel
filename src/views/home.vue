@@ -61,9 +61,32 @@
     </div>
     <div class="productContainer">
         <div class="left">
-            <img src="../assets/wechatDash.png" alt="wechatDash" width="600">
+            <img src="../assets/wechatDash.png" alt="wechatDash" width="650">
         </div>
-        <div class="right"></div>
+        <div class="right">
+            <a class="productCard" href="#">
+                <i class="productCardIcon"><img src="../assets/icon/PC.png" alt="公众号+PC"></i>
+                <div class="productCardContainer">
+                    <h1 class="productCardIconTitle">公众号+PC官网</h1>
+                    <h2 class="productCardIconSub">包含官网的完整生态</h2>
+                </div>
+
+            </a>
+            <a class="productCard" href="#">
+                <i class="productCardIcon"><img src="../assets/icon/service.png" alt="公众号+管理后台"></i>
+                <div class="productCardContainer">
+                    <h1 class="productCardIconTitle">公众号+管理后台</h1>
+                    <h2 class="productCardIconSub">能满足大部分酒店的运作需求</h2>
+                </div>
+            </a>
+            <a class="productCard" href="#">
+                <i class="productCardIcon"><img src="../assets/icon/miniProgram.png" alt="小程序"></i>
+                <div class="productCardContainer">
+                     <h1 class="productCardIconTitle">小程序+管理后台</h1>
+                     <h2 class="productCardIconSub">即将推出</h2>
+                </div>
+            </a>
+        </div>
     </div>
     <div class="impressionContainer">
         <div class="impression">
@@ -133,7 +156,7 @@
                     <h1>其他</h1>
                     <ul>
                         <li>chentianhengg@gmail.com</li>
-                        <li><span>+86 156 2648 3203</span></li>
+                        <li><span>+86 155 2102 6970</span></li>
                         <li>周一至周日 9:00 ~ 22:00</li>
                     </ul>
                 </div>
@@ -172,12 +195,14 @@
         }
 
         .bannerImg h1{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #FFFFFF;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 400;
         }
 
         .bannerImg h2{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #FFFFFF;
             margin-top: 10px;
             font-size: 1.2rem;
@@ -185,6 +210,7 @@
         }
 
         .bannerImg a{
+            font-family: PingFangSC-Regular,sans-serif;
             width: 160px;
             height: 50px;
             text-align: center;
@@ -192,7 +218,7 @@
             font-size: 0.9rem;
             text-decoration: none;
             color: #695229;
-            font-weight: 700 ;
+            font-weight: 500 ;
             background-color: #FFFFFF;
             border-radius: 50px;
             margin-top: 30px;
@@ -202,7 +228,6 @@
             display: flex;
             width: 100%;
             height: 80px;
-            /*background-color: blue;*/
             position: absolute;
             align-items: center;
             justify-content: center;
@@ -212,7 +237,6 @@
         .header{
             display: flex;
             width: 1270px;
-            /*background-color: red;*/
             padding: 0 30px;
             justify-content: space-between;
         }
@@ -225,10 +249,10 @@
             list-style: none;
             float: left;
             margin-top: 10px;
-            /*line-height: 40px;*/
         }
 
         .header ul li a{
+            font-family: PingFangSC-Regular,sans-serif;
             text-decoration: none;
             list-style: none;
             float: left;
@@ -252,6 +276,7 @@
         }
 
         .dashboardContainer h1{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #695229;
             margin: 50px;
             font-size: 1.4rem;
@@ -265,7 +290,6 @@
             width: 55%;
         }
 
-
         .dashboard .item{
             display: flex;
             flex-direction: column;
@@ -273,22 +297,25 @@
         }
 
         .dashboard .item h1{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #707070;
             font-size: 1rem;
             margin: 10px ;
         }
 
         .dashboard .item h2{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #707070;
             font-size: 0.8rem;
             margin: 0 0 80px ;
-            font-weight: 300;
+            font-weight: 100;
         }
 
         .dashboard .item  img{
             width: 40px;
         }
 
+        /*产品简介栏*/
         .productContainer{
             display: flex;
             min-width: 1270px;
@@ -297,7 +324,7 @@
         .productContainer .left{
             display: flex;
             width: 66%;
-            height: 400px;
+            height: 500px;
             background: linear-gradient(#CCEDFC, #9FD1F5);
             justify-content: center;
             align-items: center;
@@ -305,15 +332,20 @@
 
         .productContainer .right{
             width: 34%;
-            height: 400px;
+            height: 500px;
             background-color: #FFFFFF;
+        }
+        /*a标签产品卡*/
+        .productCard{
+            text-decoration: none;
+            color: #000000;
         }
 
         /*合作伙伴评价*/
         .impressionContainer {
+            font-family: PingFangSC-Regular,sans-serif;
             display: flex;
             justify-content: center;
-            /*align-items: center;*/
             min-width: 1270px;
             height: 450px;
         }
@@ -327,6 +359,7 @@
         }
 
         .impression  h1{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #695229;
             margin: 50px;
             font-size: 1.4rem;
@@ -340,6 +373,7 @@
         }
 
         .impression p{
+            font-family: PingFangSC-Regular,sans-serif;
             padding: 20px 100px;
             line-height: 2rem;
             color: #373150;
@@ -355,11 +389,13 @@
         }
 
         .customer h1{
+            font-family: PingFangSC-Regular,sans-serif;
             margin: 10px 0 0 10px;
             font-size: 1.2rem;
         }
 
         .customer p{
+            font-family: PingFangSC-Regular,sans-serif;
             padding: 0;
             margin-left: 10px;
             font-size: 0.8rem;
@@ -392,6 +428,7 @@
         }
 
         .hotelContainer h1{
+            font-family: PingFangSC-Regular,sans-serif;
             font-weight: 400;
             color: #FFFFFF;
             margin-top: 40px;
@@ -400,11 +437,13 @@
         }
 
         .hotelContainer p {
+            font-family: PingFangSC-Regular,sans-serif;
             color: #FFFFFF;
             padding: 10px 40px 10px 40px;
         }
 
         .hotelContainer a{
+            font-family: PingFangSC-Regular,sans-serif;
             display: inline-flex;
             background-color: #FFFFFF;
             text-decoration: none;
@@ -423,12 +462,14 @@
         }
 
         .marketingContainer h1{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #695229;
             font-weight: 400;
             padding: 50px 50px 10px 50px;
         }
 
         .marketingContainer h2{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #707070;
             font-weight: 400;
             font-size: 18px;
@@ -462,34 +503,43 @@
         }
 
         .footerContainer h1{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #FFFFFF;
             font-size: 16px;
             margin: 60px 0 20px;
+            font-weight: lighter;
         }
 
         .footerContainer ul {
+            font-family: PingFangSC-Regular,sans-serif;
             padding-left: 0;
             list-style: none;
         }
 
         .footerContainer li{
-            color: #707070;
+            font-family: PingFangSC-Regular,sans-serif;
+            color: #B1B1B1;
             padding-bottom: 10px;
         }
 
         .footerContainer span{
+            font-family: PingFangSC-Regular,sans-serif;
             color: #E5C182;
         }
 
         .footerContainer a{
+            font-family: PingFangSC-Regular,sans-serif;
             text-decoration: none;
-            color: #707070;
+            color: #B1B1B1;
         }
 
         .footerContainer p{
+            font-family: PingFangSC-Regular,sans-serif;
             margin: 60px 0 80px;
             color: #B1B1B1;
             font-size: 14px;
         }
+
+
 
 </style>

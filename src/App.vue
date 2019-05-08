@@ -12,5 +12,5 @@
 </script>
 
 <style>
-
+  @import './common/font/font.css';
 </style>
