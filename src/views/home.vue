@@ -319,12 +319,13 @@
         .productContainer{
             display: flex;
             min-width: 1270px;
+            border-top: 1px solid #CAEBFB;
         }
 
         .productContainer .left{
             display: flex;
             width: 66%;
-            height: 500px;
+            height: 600px;
             background: linear-gradient(#CCEDFC, #9FD1F5);
             justify-content: center;
             align-items: center;
@@ -332,13 +333,38 @@
 
         .productContainer .right{
             width: 34%;
-            height: 500px;
+            height: 600px;
             background-color: #FFFFFF;
         }
         /*a标签产品卡*/
         .productCard{
+            display: flex;
             text-decoration: none;
             color: #000000;
+            height: 199px;
+            align-items: center;
+            border-bottom: 1px solid #CAEBFB;
+        }
+
+        .productCardIcon  img{
+            width: 60px;
+            margin-left: 60px;
+        }
+
+        .productCardIconTitle {
+            font-family: PingFangSC-Regular,sans-serif;
+            color: #000000;
+            font-size: 1.3rem;
+            margin-left: 20px;
+            font-weight: 100;
+        }
+
+        .productCardIconSub{
+            font-family: PingFangSC-Regular,sans-serif;
+            color: #707070;
+            font-size: 0.8rem;
+            margin-left: 20px;
+            font-weight: 100;
         }
 
         /*合作伙伴评价*/
