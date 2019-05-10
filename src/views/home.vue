@@ -63,23 +63,45 @@
         <div class="left">
             <img src="../assets/wechatDash.png" alt="wechatDash" width="650">
         </div>
-        <div class="right">
-            <a class="productCard" href="#">
-                <i class="productCardIcon"><img src="../assets/icon/PC.png" alt="公众号+PC"></i>
-                <div class="productCardContainer">
-                    <h1 class="productCardIconTitle">公众号+PC官网</h1>
-                    <h2 class="productCardIconSub">包含官网的完整生态</h2>
-                </div>
 
-            </a>
-            <a class="productCard" href="#">
+        <!--切换不同的产品，并且有不同的样式效果-->
+        <div id="productCard" class="right">
+                <a href="#"
+                   v-bind:class="{ productCardActive : P1IsActive , productCard : P1NoActive}"
+                   @mouseenter="enterP1"
+                   @mouseleave="leaveP1"
+                >
+                    <i class="productCardIcon"><img src="../assets/icon/PC.png" alt="公众号+PC"></i>
+                    <div class="productCardContainer">
+                        <h1 class="productCardIconTitle">公众号+PC官网</h1>
+                        <h2 class="productCardIconSub">包含官网的完整生态</h2>
+                        <!--动画效果箭头-->
+                        <transition name="fade">
+                            <div class="P1Enter"
+                                 v-show="arrowShow"
+                            ><img src="../assets/icon/P1Enter.png" alt="进入键" >
+
+                            </div>
+
+                        </transition>
+                        <div class="triangle"></div>
+                    </div>
+                </a>
+
+            <a href="#"
+               v-bind:class="{ productCardActive : P2IsActive , productCard : P2NoActive}"
+               @mouseenter="enterP2"
+            >
                 <i class="productCardIcon"><img src="../assets/icon/service.png" alt="公众号+管理后台"></i>
                 <div class="productCardContainer">
                     <h1 class="productCardIconTitle">公众号+管理后台</h1>
                     <h2 class="productCardIconSub">能满足大部分酒店的运作需求</h2>
                 </div>
             </a>
-            <a class="productCard" href="#">
+            <a href="#"
+               v-bind:class="{ productCardActive : P3IsActive , productCard : P3NoActive}"
+               @mouseenter="enterP3"
+            >
                 <i class="productCardIcon"><img src="../assets/icon/miniProgram.png" alt="小程序"></i>
                 <div class="productCardContainer">
                      <h1 class="productCardIconTitle">小程序+管理后台</h1>
@@ -169,11 +191,66 @@
 
 <script>
     export default {
-        name: "home"
+        el:'#productCard',
+        data(){
+            return{
+                P1IsActive:true,
+                P2IsActive:false,
+                P1NoActive:false,
+                P2NoActive:true,
+                P3IsActive:false,
+                P3NoActive:true,
+                arrowShow:false
+            }
+        },
+        methods:{
+            enterP1:function(){
+                this.P1IsActive = true;
+                this.P2IsActive = false;
+                this.P3IsActive = false;
+                this.P1NoActive = false;
+                this.P2NoActive = true;
+                this.P3NoActive = true;
+                this.arrowShow = true;
+
+            },
+            leaveP1:function(){
+                this.arrowShow = false;
+            },
+            enterP2:function(){
+                this.P1IsActive = false;
+                this.P2IsActive = true;
+                this.P3IsActive = false;
+                this.P1NoActive = true;
+                this.P2NoActive = false;
+                this.P3NoActive = true
+            },
+            enterP3:function(){
+                this.P1IsActive = false;
+                this.P2IsActive = false;
+                this.P3IsActive = true;
+                this.P1NoActive = true;
+                this.P2NoActive = true;
+                this.P3NoActive = false
+            }
+        }
     }
 </script>
 
 <style scoped>
+        /*动画*/
+        .fade-enter-active {
+            transition: all .3s ease;
+        }
+        .fade-leave-active{
+            transition: all .2s cubic-bezier(1.0,0.5,0.8,1.0);
+        }
+        .fade-enter,.fade-leave-to{
+            transform:translateX(80px);
+            opacity: 0;
+        }
+        /*动画结束*/
+
         /*容器的样式*/
         #container{
             display: flex;
@@ -307,19 +384,20 @@
             font-family: PingFangSC-Regular,sans-serif;
             color: #707070;
             font-size: 0.8rem;
-            margin: 0 0 80px ;
+            margin: 0 0 80px;
             font-weight: 100;
         }
 
         .dashboard .item  img{
             width: 40px;
+            height: 40px;
         }
 
         /*产品简介栏*/
         .productContainer{
             display: flex;
             min-width: 1270px;
-            border-top: 1px solid #CAEBFB;
+
         }
 
         .productContainer .left{
@@ -336,25 +414,59 @@
             height: 600px;
             background-color: #FFFFFF;
         }
-        /*a标签产品卡*/
+
+
+        .P1Enter{
+            display: flex;
+            background-color:#CAEBFB;
+            height: 198px;
+            width: 80px;
+            position: absolute;
+            z-index: 100;
+            top: 1100px;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .P1Enter img{
+            display: inline-flex;
+            height: 22px;
+
+        }
+
+        /*a标签产品卡-未激活状态*/
         .productCard{
             display: flex;
             text-decoration: none;
             color: #000000;
-            height: 199px;
+            height: 200px;
             align-items: center;
-            border-bottom: 1px solid #CAEBFB;
+            opacity: 0.1;
         }
 
-        .productCardIcon  img{
-            width: 60px;
+        /*a标签产品卡-激活状态*/
+        .productCardActive{
+            display: flex;
+            text-decoration: none;
+            color: #000000;
+            height: 198px;
+            align-items: center;
+            border-left: none;
+            box-shadow: 0 0 10px rgba(20,89,193,0.2)
+
+        }
+
+        /*i标签下的img图片*/
+        .productCardIcon img{
+            width: 80px;
             margin-left: 60px;
         }
 
         .productCardIconTitle {
             font-family: PingFangSC-Regular,sans-serif;
             color: #000000;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-left: 20px;
             font-weight: 100;
         }
@@ -362,9 +474,24 @@
         .productCardIconSub{
             font-family: PingFangSC-Regular,sans-serif;
             color: #707070;
-            font-size: 0.8rem;
+            font-size: 1rem;
             margin-left: 20px;
             font-weight: 100;
+        }
+
+        /*左三角形*/
+        .triangle{
+            display: flex;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid #70F0F0;
+            border-bottom: 30px solid transparent;
+            border-top: 30px solid transparent;
+            z-index: 111;
+            right: 34%;
+            top: 1170px;
         }
 
         /*合作伙伴评价*/
