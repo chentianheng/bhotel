@@ -78,34 +78,63 @@
                         <!--动画效果箭头-->
                         <transition name="fade">
                             <div class="P1Enter"
-                                 v-show="arrowShow"
+                                 v-show="P1arrowShow"
                             ><img src="../assets/icon/P1Enter.png" alt="进入键" >
-
                             </div>
-
                         </transition>
-                        <div class="triangle"></div>
+                        <!--动画三角形-->
+                        <transition name="triangle-fade">
+                        <div class="triangle"
+                             v-show="P1triangleShow"></div>
+                        </transition>
                     </div>
                 </a>
 
             <a href="#"
                v-bind:class="{ productCardActive : P2IsActive , productCard : P2NoActive}"
                @mouseenter="enterP2"
+               @mouseleave="leaveP2"
             >
                 <i class="productCardIcon"><img src="../assets/icon/service.png" alt="公众号+管理后台"></i>
                 <div class="productCardContainer">
                     <h1 class="productCardIconTitle">公众号+管理后台</h1>
                     <h2 class="productCardIconSub">能满足大部分酒店的运作需求</h2>
+                    <!--动画效果箭头-->
+                    <transition name="fade">
+                        <div class="P2Enter"
+                             v-show="P2arrowShow"
+                        ><img src="../assets/icon/P2Enter.png" alt="进入键" >
+                        </div>
+                    </transition>
+                    <!--动画三角形-->
+                    <transition name="triangle-fade">
+                        <div class="P2triangle"
+                             v-show="P2triangleShow"></div>
+                    </transition>
                 </div>
             </a>
+
             <a href="#"
                v-bind:class="{ productCardActive : P3IsActive , productCard : P3NoActive}"
                @mouseenter="enterP3"
+               @mouseleave="leaveP3"
             >
                 <i class="productCardIcon"><img src="../assets/icon/miniProgram.png" alt="小程序"></i>
                 <div class="productCardContainer">
                      <h1 class="productCardIconTitle">小程序+管理后台</h1>
-                     <h2 class="productCardIconSub">即将推出</h2>
+                     <h2 class="productCardIconSub">最新解决方案，更好的体验</h2>
+                    <!--动画效果箭头-->
+                    <transition name="P3-fade">
+                        <div class="P3Enter"
+                             v-show="P3arrowShow"
+                        >即将推出
+                        </div>
+                    </transition>
+                    <!--动画三角形-->
+                    <transition name="triangle-fade">
+                        <div class="P3triangle"
+                             v-show="P3triangleShow"></div>
+                    </transition>
                 </div>
             </a>
         </div>
@@ -196,11 +225,20 @@
             return{
                 P1IsActive:true,
                 P2IsActive:false,
+                P3IsActive:false,
+
                 P1NoActive:false,
                 P2NoActive:true,
-                P3IsActive:false,
                 P3NoActive:true,
-                arrowShow:false
+
+                P1arrowShow:false,
+                P2arrowShow:false,
+                P3arrowShow:false,
+
+                P1triangleShow:true,
+                P2triangleShow:false,
+                P3triangleShow:false,
+
             }
         },
         methods:{
@@ -208,30 +246,56 @@
                 this.P1IsActive = true;
                 this.P2IsActive = false;
                 this.P3IsActive = false;
+
                 this.P1NoActive = false;
                 this.P2NoActive = true;
                 this.P3NoActive = true;
-                this.arrowShow = true;
+
+                this.P1arrowShow = true;
+
+                this.P1triangleShow = true;
+                this.P2triangleShow = false;
+                this.P3triangleShow = false;
 
             },
             leaveP1:function(){
-                this.arrowShow = false;
+                this.P1arrowShow = false;
             },
             enterP2:function(){
                 this.P1IsActive = false;
                 this.P2IsActive = true;
                 this.P3IsActive = false;
+
                 this.P1NoActive = true;
                 this.P2NoActive = false;
-                this.P3NoActive = true
+                this.P3NoActive = true;
+
+                this.P2arrowShow = true;
+
+                this.P1triangleShow = false;
+                this.P2triangleShow = true;
+                this.P3triangleShow = false;
+            },
+            leaveP2:function(){
+                this.P2arrowShow = false;
             },
             enterP3:function(){
                 this.P1IsActive = false;
                 this.P2IsActive = false;
                 this.P3IsActive = true;
+
                 this.P1NoActive = true;
                 this.P2NoActive = true;
-                this.P3NoActive = false
+                this.P3NoActive = false;
+
+                this.P3arrowShow = true;
+
+                this.P1triangleShow = false;
+                this.P2triangleShow = false;
+                this.P3triangleShow = true;
+            },
+            leaveP3:function () {
+                this.P3arrowShow = false;
             }
         }
     }
@@ -239,14 +303,41 @@
 
 <style scoped>
         /*动画*/
+        /*右侧的箭头动画*/
+
         .fade-enter-active {
-            transition: all .3s ease;
+            transition: all .4s ease;
         }
         .fade-leave-active{
             transition: all .2s cubic-bezier(1.0,0.5,0.8,1.0);
         }
         .fade-enter,.fade-leave-to{
             transform:translateX(80px);
+            opacity: 0;
+        }
+
+        /*左侧的箭头动画*/
+        .triangle-fade-enter-active {
+            transition: all .4s ease;
+        }
+        .triangle-fade-leave-active{
+            transition: all .2s cubic-bezier(1.0,0.5,0.8,1.0);
+        }
+        .triangle-fade-enter,.triangle-fade-leave-to{
+            transform:translateX(20px);
+            opacity: 0;
+        }
+        /*动画结束*/
+
+        /*左侧的箭头动画*/
+        .P3-fade-enter-active {
+            transition: all .4s ease;
+        }
+        .P3-fade-leave-active{
+            transition: all .2s cubic-bezier(1.0,0.5,0.8,1.0);
+        }
+        .P3-fade-enter,.P3-fade-leave-to{
+            transform:translateX(-60px);
             opacity: 0;
         }
         /*动画结束*/
@@ -416,25 +507,6 @@
         }
 
 
-        .P1Enter{
-            display: flex;
-            background-color:#CAEBFB;
-            height: 198px;
-            width: 80px;
-            position: absolute;
-            z-index: 100;
-            top: 1100px;
-            right: 0;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .P1Enter img{
-            display: inline-flex;
-            height: 22px;
-
-        }
-
         /*a标签产品卡-未激活状态*/
         .productCard{
             display: flex;
@@ -443,6 +515,7 @@
             height: 200px;
             align-items: center;
             opacity: 0.1;
+            z-index: 2;
         }
 
         /*a标签产品卡-激活状态*/
@@ -453,7 +526,8 @@
             height: 198px;
             align-items: center;
             border-left: none;
-            box-shadow: 0 0 10px rgba(20,89,193,0.2)
+            box-shadow: 0 0 10px rgba(20,89,193,0.2);
+            z-index: 2;
 
         }
 
@@ -479,21 +553,102 @@
             font-weight: 100;
         }
 
-        /*左三角形*/
+        /*提示箭头的样式*/
+        .P1Enter{
+            display: flex;
+            background-color:#CAEBFB;
+            height: 198px;
+            width: 80px;
+            position: absolute;
+            z-index: 100;
+            top: 1100px;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .P1Enter img{
+            display: inline-flex;
+            height: 22px;
+        }
+
+        .P2Enter{
+            display: flex;
+            background-color:#F2F2FA;
+            height: 198px;
+            width: 80px;
+            position: absolute;
+            z-index: 100;
+            top: 1300px;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .P2Enter img{
+            display: inline-flex;
+            height: 22px;
+        }
+
+        .P3Enter{
+            font-family: PingFangSC-Regular,sans-serif;
+            display: flex;
+            background:linear-gradient(to right,rgba(255,216,105,0),rgba(255,175,56,0.5));
+            color: #996921;
+            height: 2rem;
+            width: 180px;
+            position: absolute;
+            top: 1571px;
+            right: 10%;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            border-radius: 5px;
+
+        }
+
+
+        /*P1左三角形*/
         .triangle{
             display: flex;
             position: absolute;
             width: 0;
             height: 0;
-            border-left: 30px solid transparent;
-            border-right: 30px solid #70F0F0;
-            border-bottom: 30px solid transparent;
-            border-top: 30px solid transparent;
-            z-index: 111;
+            border-left: 20px solid transparent;
+            border-right: 20px solid #FFFFFF;
+            border-bottom: 20px solid transparent;
+            border-top: 20px solid transparent;
             right: 34%;
-            top: 1170px;
+            top: 1180px;
         }
 
+        /*P2左三角形*/
+        .P2triangle{
+            display: flex;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid #FFFFFF;
+            border-bottom: 20px solid transparent;
+            border-top: 20px solid transparent;
+            right: 34%;
+            top: 1380px;
+        }
+
+        /*P3左三角形*/
+        .P3triangle{
+            display: flex;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid #FFFFFF;
+            border-bottom: 20px solid transparent;
+            border-top: 20px solid transparent;
+            right: 34%;
+            top: 1580px;
+        }
         /*合作伙伴评价*/
         .impressionContainer {
             font-family: PingFangSC-Regular,sans-serif;
