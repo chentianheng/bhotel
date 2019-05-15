@@ -121,7 +121,7 @@
             >
                 <i class="productCardIcon"><img src="../assets/icon/miniProgram.png" alt="小程序"></i>
                 <div class="productCardContainer">
-                     <h1 class="productCardIconTitle">小程序+管理后台</h1>
+                     <h1 class="productCardIconTitle">小程序</h1>
                      <h2 class="productCardIconSub">最新解决方案，更好的体验</h2>
                     <!--动画效果箭头-->
                     <transition name="P3-fade">
@@ -341,7 +341,6 @@
             opacity: 0;
         }
         /*动画结束*/
-
         /*容器的样式*/
         #container{
             display: flex;
@@ -596,10 +595,10 @@
             background:linear-gradient(to right,rgba(255,216,105,0),rgba(255,175,56,0.5));
             color: #996921;
             height: 2rem;
-            width: 180px;
+            width: 150px;
             position: absolute;
             top: 1571px;
-            right: 10%;
+            left: calc(66% + 160px);
             align-items: center;
             justify-content: flex-end;
             padding-right: 15px;
@@ -618,7 +617,7 @@
             border-right: 20px solid #FFFFFF;
             border-bottom: 20px solid transparent;
             border-top: 20px solid transparent;
-            right: 34%;
+            left: calc(66% - 40px);
             top: 1180px;
         }
 
@@ -632,7 +631,7 @@
             border-right: 20px solid #FFFFFF;
             border-bottom: 20px solid transparent;
             border-top: 20px solid transparent;
-            right: 34%;
+            left: calc(66% - 40px);
             top: 1380px;
         }
 
@@ -646,7 +645,7 @@
             border-right: 20px solid #FFFFFF;
             border-bottom: 20px solid transparent;
             border-top: 20px solid transparent;
-            right: 34%;
+            left: calc(66% - 40px);
             top: 1580px;
         }
         /*合作伙伴评价*/
